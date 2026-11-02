@@ -23,6 +23,15 @@ const AboutPage = () => {
   });
 
   const skills = [
+    "Python",
+    "Agentic AI",
+    "Multi-Agent Systems",
+    "Google ADK",
+    "Vertex AI",
+    "Gemini",
+    "Google Cloud (Cloud Run)",
+    "Azure AI Foundry",
+    "MCP",
     "React.js",
     "Next.js",
     "JavaScript",
@@ -77,7 +86,7 @@ const AboutPage = () => {
             {/* HEADING */}
             <div className="flex flex-col gap-4">
               <span className="uppercase tracking-[0.3rem] text-sm text-gray-500">
-                Technical Lead • Full Stack AI Engineer
+                AI Architect • Full Stack AI Engineer
               </span>
 
               <h1 className="font-bold text-4xl md:text-5xl leading-tight">
@@ -88,9 +97,9 @@ const AboutPage = () => {
             {/* DESCRIPTION */}
             <div className="flex flex-col gap-6 text-lg leading-8 text-gray-700">
               <p>
-                I'm <b>Ankit Kumar</b>, a{" "}
-                <b>Technical Lead & Full Stack AI Engineer</b> with{" "}
-                <b>9+ years of experience</b> building enterprise-grade
+                I'm <b>Ankit Kumar</b>, an{" "}
+                <b>AI Architect & Full Stack AI Engineer</b> with{" "}
+                <b>10+ years of experience</b> building enterprise-grade
                 platforms, scalable frontend architectures, and AI-powered
                 workflow systems across{" "}
                 <b>
@@ -102,11 +111,12 @@ const AboutPage = () => {
               <p>
                 I specialize in combining{" "}
                 <b>enterprise frontend engineering with modern AI systems</b>,
-                building intelligent applications using{" "}
+                building production multi-agent systems using{" "}
                 <b>
-                  React, Next.js, FastAPI, LangChain, OpenAI APIs, Claude AI,
-                  PostgreSQL, and scalable backend architectures.
-                </b>
+                  LangGraph, Google ADK, Vertex AI, Gemini, OpenAI and Claude
+                  APIs, Python/FastAPI, React, and PostgreSQL
+                </b>{" "}
+                on Google Cloud and Azure.
               </p>
 
               <p>
@@ -125,30 +135,26 @@ const AboutPage = () => {
             {/* STATS */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
               <div className="bg-white shadow-md rounded-2xl p-5 border border-gray-100">
-                <h2 className="text-3xl font-bold">9+</h2>
-                <p className="text-sm text-gray-500 mt-2">
-                  Years Experience
-                </p>
+                <h2 className="text-3xl font-bold">10+</h2>
+                <p className="text-sm text-gray-500 mt-2">Years Experience</p>
               </div>
 
               <div className="bg-white shadow-md rounded-2xl p-5 border border-gray-100">
                 <h2 className="text-3xl font-bold">40+</h2>
-                <p className="text-sm text-gray-500 mt-2">
-                  Countries Deployed
-                </p>
+                <p className="text-sm text-gray-500 mt-2">Countries Deployed</p>
               </div>
 
               <div className="bg-white shadow-md rounded-2xl p-5 border border-gray-100">
                 <h2 className="text-3xl font-bold">60%</h2>
                 <p className="text-sm text-gray-500 mt-2">
-                  AI Automation
+                  Claims Checks Automated
                 </p>
               </div>
 
               <div className="bg-white shadow-md rounded-2xl p-5 border border-gray-100">
-                <h2 className="text-3xl font-bold">$20B+</h2>
+                <h2 className="text-3xl font-bold">4h → 45m</h2>
                 <p className="text-sm text-gray-500 mt-2">
-                  BVP Client Scale
+                  Claims Processing Time
                 </p>
               </div>
             </div>
@@ -198,11 +204,7 @@ const AboutPage = () => {
                 strokeWidth="1"
               ></path>
 
-              <path
-                d="M12 6V14"
-                stroke="#000000"
-                strokeWidth="1"
-              ></path>
+              <path d="M12 6V14" stroke="#000000" strokeWidth="1"></path>
 
               <path
                 d="M15 11L12 14L9 11"
@@ -213,13 +215,10 @@ const AboutPage = () => {
           </div>
 
           {/* SKILLS */}
-          <div
-            className="flex flex-col gap-12 justify-center"
-            ref={skillRef}
-          >
+          <div className="flex flex-col gap-12 justify-center" ref={skillRef}>
             <motion.h1
-              initial={{ x: "-300px" }}
-              animate={isSkillRefInView ? { x: 0 } : {}}
+              initial={{ opacity: 0, x: -40 }}
+              animate={isSkillRefInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.2 }}
               className="font-bold text-4xl"
             >
@@ -227,8 +226,8 @@ const AboutPage = () => {
             </motion.h1>
 
             <motion.div
-              initial={{ x: "-300px" }}
-              animate={isSkillRefInView ? { x: 0 } : {}}
+              initial={{ opacity: 0, x: -40 }}
+              animate={isSkillRefInView ? { opacity: 1, x: 0 } : {}}
               className="flex gap-4 flex-wrap"
             >
               {skills.map((skill, index) => (
@@ -248,8 +247,8 @@ const AboutPage = () => {
             ref={experienceRef}
           >
             <motion.h1
-              initial={{ x: "-300px" }}
-              animate={isExperienceRefInView ? { x: "0" } : {}}
+              initial={{ opacity: 0, x: -40 }}
+              animate={isExperienceRefInView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.2 }}
               className="font-bold text-4xl"
             >
@@ -258,14 +257,12 @@ const AboutPage = () => {
 
             {/* FREELANCE */}
             <motion.div
-              initial={{ x: "-300px" }}
-              animate={isExperienceRefInView ? { x: 0 } : {}}
+              initial={{ opacity: 0, x: -40 }}
+              animate={isExperienceRefInView ? { opacity: 1, x: 0 } : {}}
               className="flex flex-col gap-8"
             >
               <div>
-                <h2 className="text-3xl font-bold">
-                  Freelance Experience
-                </h2>
+                <h2 className="text-3xl font-bold">Freelance Experience</h2>
 
                 <p className="text-gray-500 mt-2">
                   Independent Full Stack AI Engineering Projects
@@ -291,11 +288,10 @@ const AboutPage = () => {
                 </div>
 
                 <p className="text-gray-700 leading-8">
-                  Built an AI-powered Activity Reporting & Portfolio
-                  Management platform for a leading Silicon Valley VC firm
-                  managing $20B+ AUM. Developed enterprise workflows,
-                  portfolio dashboards, AI KPI extraction systems, and
-                  partner reporting modules using React, Node.js,
+                  Built an AI-powered Activity Reporting & Portfolio Management
+                  platform for a leading Silicon Valley VC firm. Developed
+                  enterprise workflows, portfolio dashboards, AI KPI extraction
+                  systems, and partner reporting modules using React, Node.js,
                   PostgreSQL, Databricks, and Claude AI APIs.
                 </p>
 
@@ -319,58 +315,154 @@ const AboutPage = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
 
-            {/* HCL */}
-            <motion.div
-              initial={{ x: "-300px" }}
-              animate={isExperienceRefInView ? { x: 0 } : {}}
-              className="flex flex-col gap-8"
-            >
-              <div>
-                <h2 className="text-3xl font-bold">
-                  HCL Technologies
-                </h2>
-
-                <p className="text-gray-500 mt-2">
-                  Technical Lead • Feb 2022 - Present
-                </p>
-              </div>
-
-              {/* IRP */}
+              {/* AIGENCYIQ */}
               <div className="bg-white border border-gray-100 shadow-xl rounded-3xl p-8 flex flex-col gap-6">
-                <div className="flex items-center justify-between flex-wrap gap-4">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>
-                    <h3 className="text-2xl font-bold">
-                      Intelligent Regulatory Platform (IRP)
-                    </h3>
+                    <h3 className="text-2xl font-bold">AIgencyIQ</h3>
 
                     <p className="text-gray-500 mt-2">
-                      Frontend React Lead
+                      ERP Integration Specialist • Xero Connector
                     </p>
                   </div>
 
                   <div className="text-sm font-semibold text-red-400">
-                    Current Project
+                    Aug 2026 - Oct 2026
                   </div>
                 </div>
 
                 <p className="text-gray-700 leading-8">
-                  Leading frontend development for a Life Sciences &
-                  Healthcare regulatory platform. Building reusable
-                  component libraries, scalable React architectures, and
-                  enterprise regulatory workflow systems handling
-                  large-scale document processing and reporting.
+                  Built a Xero ERP connector for the ServiceOps Pulse platform
+                  at a US startup. Designed OAuth and multi-tenant services,
+                  data sync and transform services, API routes, Supabase schema
+                  migrations, and a React test UI, following the existing
+                  QuickBooks connector as the reference architecture. Delivered
+                  in three sprints, from the OAuth flow through data transforms
+                  and database migrations.
                 </p>
 
                 <div className="flex flex-wrap gap-3">
                   {[
+                    "Xero API",
+                    "OAuth 2.0",
+                    "Multi-tenant",
+                    "Python",
+                    "Supabase",
+                    "PostgreSQL",
                     "React.js",
-                    "Redux",
-                    "MUI",
-                    "Enterprise Dashboards",
-                    "Workflow Systems",
-                    "Reusable Components",
+                    "REST APIs",
+                  ].map((tech, index) => (
+                    <span
+                      key={index}
+                      className="bg-black text-white px-4 py-2 rounded-xl text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* HCL */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={isExperienceRefInView ? { opacity: 1, x: 0 } : {}}
+              className="flex flex-col gap-8"
+            >
+              <div>
+                <h2 className="text-3xl font-bold">HCL Technologies</h2>
+
+                <p className="text-gray-500 mt-2">
+                  AI Architect & Full Stack AI Engineer • Mar 2024 - Present
+                  <br />
+                  Technical Lead • Feb 2022 - Mar 2024
+                </p>
+              </div>
+
+              {/* AUGMENTED INSIGHTS */}
+              <div className="bg-white border border-gray-100 shadow-xl rounded-3xl p-8 flex flex-col gap-6">
+                <div className="flex items-center justify-between flex-wrap gap-4">
+                  <div>
+                    <h3 className="text-2xl font-bold">
+                      Augmented Insights: AI-Powered BI Modernization
+                    </h3>
+
+                    <p className="text-gray-500 mt-2">
+                      AI Solutions Architect • Conversational BI & Solution
+                      Offerings
+                    </p>
+                  </div>
+
+                  <div className="text-sm font-semibold text-red-400">
+                    Nov 2026 - Present
+                  </div>
+                </div>
+
+                <p className="text-gray-700 leading-8">
+                  Modernizing enterprise BI platforms with AI and building
+                  conversational BI, so business users can ask questions of
+                  their data in plain English and get answers, insights and
+                  charts instead of waiting on static reports. Also shaping new
+                  AI solution offerings into market-ready pitches for HCLTech
+                  clients and training sales teams to position and sell them.
+                </p>
+
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    "Conversational BI",
+                    "BI Modernization",
+                    "Generative AI",
+                    "Agentic AI",
+                    "Solution Architecture",
+                    "Pre-sales",
+                    "Sales Enablement",
+                  ].map((tech, index) => (
+                    <span
+                      key={index}
+                      className="bg-black text-white px-4 py-2 rounded-xl text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* QBR PLATFORM */}
+              <div className="bg-white border border-gray-100 shadow-xl rounded-3xl p-8 flex flex-col gap-6">
+                <div className="flex items-center justify-between flex-wrap gap-4">
+                  <div>
+                    <h3 className="text-2xl font-bold">
+                      Agentic AI Decision-Support Platform
+                    </h3>
+
+                    <p className="text-gray-500 mt-2">
+                      Agentic AI Architect • Sales Manager QBR Platform
+                    </p>
+                  </div>
+
+                  <div className="text-sm font-semibold text-red-400">
+                    Aug 2026 - Oct 2026
+                  </div>
+                </div>
+
+                <p className="text-gray-700 leading-8">
+                  Architected and built an end-to-end multi-agent platform on
+                  Gemini and Vertex AI. Synthesis, Analysis and Content agents
+                  answer sales managers' questions in plain English, generate
+                  executive QBR slides, and email them to leadership on a
+                  schedule, with human review before anything is sent.
+                </p>
+
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    "Gemini",
+                    "Vertex AI",
+                    "Multi-Agent Systems",
+                    "FastAPI",
+                    "React.js",
+                    "Cloud Run",
+                    "Human-in-the-loop",
                   ].map((tech, index) => (
                     <span
                       key={index}
@@ -396,26 +488,70 @@ const AboutPage = () => {
                   </div>
 
                   <div className="text-sm font-semibold text-red-400">
-                    Mar 2025 - Sep 2025
+                    Feb 2026 - July 2026
                   </div>
                 </div>
 
                 <p className="text-gray-700 leading-8">
-                  Built an AI-powered claims processing platform using
-                  React, FastAPI, LangChain, OpenAI APIs, and PostgreSQL,
-                  reducing manual verification effort by 60% and
-                  processing time from 4 hours to 45 minutes through
-                  intelligent workflow automation.
+                  Built an AI-powered claims processing platform using React,
+                  FastAPI, LangGraph, OpenAI APIs, and PostgreSQL, reducing
+                  manual verification effort by 60% and processing time from 4
+                  hours to 45 minutes, with 92% precision in user acceptance
+                  testing.
                 </p>
 
                 <div className="flex flex-wrap gap-3">
                   {[
                     "FastAPI",
-                    "LangChain",
+                    "LangGraph",
                     "OpenAI APIs",
                     "React.js",
                     "JWT / RBAC",
                     "PostgreSQL",
+                  ].map((tech, index) => (
+                    <span
+                      key={index}
+                      className="bg-black text-white px-4 py-2 rounded-xl text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* IRP */}
+              <div className="bg-white border border-gray-100 shadow-xl rounded-3xl p-8 flex flex-col gap-6">
+                <div className="flex items-center justify-between flex-wrap gap-4">
+                  <div>
+                    <h3 className="text-2xl font-bold">
+                      Intelligent Regulatory Platform (IRP)
+                    </h3>
+
+                    <p className="text-gray-500 mt-2">Frontend React Lead</p>
+                  </div>
+
+                  <div className="text-sm font-semibold text-red-400">
+                    Apr 2024 - Jan 2026
+                  </div>
+                </div>
+
+                <p className="text-gray-700 leading-8">
+                  Led frontend development for a Life Sciences & Healthcare
+                  regulatory platform. Built reusable component libraries,
+                  scalable React architectures, and enterprise regulatory
+                  workflow systems handling 500K+ document submissions a year,
+                  and delivered GenAI features on Azure AI Foundry.
+                </p>
+
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    "React.js",
+                    "Azure AI Foundry",
+                    "Redux",
+                    "MUI",
+                    "Enterprise Dashboards",
+                    "Workflow Systems",
+                    "Reusable Components",
                   ].map((tech, index) => (
                     <span
                       key={index}
@@ -435,22 +571,19 @@ const AboutPage = () => {
                       Standard Chartered Bank (RTOB)
                     </h3>
 
-                    <p className="text-gray-500 mt-2">
-                      Technical Lead
-                    </p>
+                    <p className="text-gray-500 mt-2">Technical Lead</p>
                   </div>
 
                   <div className="text-sm font-semibold text-red-400">
-                    2022 - 2025
+                    Feb 2022 - Mar 2024
                   </div>
                 </div>
 
                 <p className="text-gray-700 leading-8">
                   Led frontend architecture for a global banking platform
-                  deployed across 40+ countries. Built multilingual
-                  enterprise dashboards, optimized application
-                  performance, and developed reusable UI systems used
-                  across multiple enterprise products.
+                  deployed across 40+ countries. Built multilingual enterprise
+                  dashboards, optimized application performance, and developed
+                  reusable UI systems used across multiple enterprise products.
                 </p>
 
                 <div className="flex flex-wrap gap-3">
@@ -475,8 +608,8 @@ const AboutPage = () => {
 
             {/* TCS */}
             <motion.div
-              initial={{ x: "-300px" }}
-              animate={isExperienceRefInView ? { x: 0 } : {}}
+              initial={{ opacity: 0, x: -40 }}
+              animate={isExperienceRefInView ? { opacity: 1, x: 0 } : {}}
               className="flex flex-col gap-8"
             >
               <div>
@@ -493,9 +626,7 @@ const AboutPage = () => {
               <div className="bg-white border border-gray-100 shadow-xl rounded-3xl p-8 flex flex-col gap-6">
                 <div className="flex items-center justify-between flex-wrap gap-4">
                   <div>
-                    <h3 className="text-2xl font-bold">
-                      Deutsche Bank
-                    </h3>
+                    <h3 className="text-2xl font-bold">Deutsche Bank</h3>
 
                     <p className="text-gray-500 mt-2">
                       Investment Banking Portal
@@ -508,10 +639,10 @@ const AboutPage = () => {
                 </div>
 
                 <p className="text-gray-700 leading-8">
-                  Built enterprise trading dashboards in React & Redux
-                  handling large-scale financial data processing.
-                  Improved rendering performance and optimized API
-                  handling for investment banking workflows.
+                  Built enterprise trading dashboards in React & Redux handling
+                  large-scale financial data processing. Improved rendering
+                  performance and optimized API handling for investment banking
+                  workflows.
                 </p>
 
                 <div className="flex flex-wrap gap-3">
@@ -536,9 +667,7 @@ const AboutPage = () => {
               <div className="bg-white border border-gray-100 shadow-xl rounded-3xl p-8 flex flex-col gap-6">
                 <div className="flex items-center justify-between flex-wrap gap-4">
                   <div>
-                    <h3 className="text-2xl font-bold">
-                      British Telecom
-                    </h3>
+                    <h3 className="text-2xl font-bold">British Telecom</h3>
 
                     <p className="text-gray-500 mt-2">
                       Customer Self-Service Portal
@@ -551,10 +680,10 @@ const AboutPage = () => {
                 </div>
 
                 <p className="text-gray-700 leading-8">
-                  Developed React/Redux customer self-service portal used
-                  by millions of global users. Integrated Node.js APIs,
-                  improved accessibility compliance, and optimized user
-                  experience across multiple devices.
+                  Developed React/Redux customer self-service portal used by
+                  millions of global users. Integrated Node.js APIs, improved
+                  accessibility compliance, and optimized user experience across
+                  multiple devices.
                 </p>
 
                 <div className="flex flex-wrap gap-3">
@@ -579,9 +708,7 @@ const AboutPage = () => {
               <div className="bg-white border border-gray-100 shadow-xl rounded-3xl p-8 flex flex-col gap-6">
                 <div className="flex items-center justify-between flex-wrap gap-4">
                   <div>
-                    <h3 className="text-2xl font-bold">
-                      McDermott
-                    </h3>
+                    <h3 className="text-2xl font-bold">McDermott</h3>
 
                     <p className="text-gray-500 mt-2">
                       Engineering Project Management Portal
@@ -594,9 +721,9 @@ const AboutPage = () => {
                 </div>
 
                 <p className="text-gray-700 leading-8">
-                  Built enterprise dashboards and engineering management
-                  systems for global engineering teams across multiple
-                  countries with focus on performance and usability.
+                  Built enterprise dashboards and engineering management systems
+                  for global engineering teams across multiple countries with
+                  focus on performance and usability.
                 </p>
 
                 <div className="flex flex-wrap gap-3">

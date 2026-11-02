@@ -215,7 +215,7 @@ const ContactPage = () => {
                   <div>
                     <p className="text-sm text-gray-500">Experience</p>
 
-                    <p className="font-semibold text-black">9+ Years</p>
+                    <p className="font-semibold text-black">10+ Years</p>
                   </div>
                 </div>
               </div>
@@ -247,9 +247,7 @@ const ContactPage = () => {
                   </div>
 
                   <div>
-                    <p className="text-sm text-gray-500">
-                      Response Time
-                    </p>
+                    <p className="text-sm text-gray-500">Response Time</p>
 
                     <p className="font-semibold text-black">
                       Usually within 24 hrs
@@ -258,8 +256,6 @@ const ContactPage = () => {
                 </div>
               </div>
             </div>
-
-            
           </div>
 
           {/* RIGHT SECTION */}
@@ -410,7 +406,6 @@ const ContactPage = () => {
                 "
               >
                 Start a Conversation
-
                 <span className="text-xl group-hover:translate-x-1 transition-all">
                   →
                 </span>
