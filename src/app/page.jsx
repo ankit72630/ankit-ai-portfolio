@@ -20,12 +20,12 @@ const Homepage = () => {
       label: "Years Experience",
     },
     {
-      value: "10+",
-      label: "Enterprise Projects",
+      value: "60%",
+      label: "Claims Checks Automated",
     },
     {
-      value: "AI",
-      label: "Workflow Systems",
+      value: "4h → 45m",
+      label: "Claims Processing Time",
     },
     /* {
       value: "Global",
@@ -168,7 +168,7 @@ const Homepage = () => {
               shadow-xl
             "
           >
-            Enterprise AI Engineering • Full Stack Development
+            AI Architect • Agentic AI • Full Stack
           </motion.div>
 
           {/* MAIN HEADING */}
@@ -185,7 +185,7 @@ const Homepage = () => {
                 text-black
               "
             >
-              Building Intelligent Enterprise Products & AI Systems
+              Building Production Multi-Agent AI Systems
             </h1>
           </div>
 
@@ -199,11 +199,12 @@ const Homepage = () => {
               max-w-2xl
             "
           >
-            Specialized in enterprise AI platforms, workflow automation,
-            intelligent document systems, and scalable full stack applications
-            across banking, healthcare, telecom, and venture capital domains. I
-            design modern digital products that combine clean user experience,
-            high-performance engineering, and intelligent automation.
+            AI architect with 10+ years of experience. I design and ship
+            multi-agent AI systems end to end with LangGraph, Google ADK, Vertex
+            AI and Gemini, RAG, Python/FastAPI and React, deployed on Google
+            Cloud and Azure. Recently: a claims AI that cut processing from 4
+            hours to 45 minutes, and an agentic platform that turns sales data
+            into executive reports.
           </p>
 
           {/* DOMAIN LABELS */}
@@ -213,7 +214,8 @@ const Homepage = () => {
               "HEALTHCARE",
               "TELECOM",
               "VENTURE CAPITAL",
-              "AI AUTOMATION",
+              "INSURANCE",
+              "BI & ANALYTICS",
             ].map((domain, index) => (
               <div
                 key={index}
@@ -231,6 +233,9 @@ const Homepage = () => {
           </div>
 
           {/* TRUST CHIPS */}
+          <p className="text-xs tracking-[0.2rem] uppercase text-gray-500 font-semibold -mb-4">
+            Companies & clients I&apos;ve delivered for
+          </p>
           <div className="flex flex-wrap gap-4 pt-2">
             {companies.map((item, index) => (
               <motion.div
@@ -260,12 +265,11 @@ const Homepage = () => {
           </div>
 
           {/* STATS */}
-          {/* STATS */}
           <div
             className="
     grid
     grid-cols-2
-    xl:grid-cols-4
+    sm:grid-cols-3
     gap-5
     w-full
     pt-4
@@ -289,7 +293,9 @@ const Homepage = () => {
         transition-all duration-300
       "
               >
-                <h3 className="text-4xl font-black text-black">{item.value}</h3>
+                <h3 className="text-2xl xl:text-3xl font-black text-black whitespace-nowrap">
+                  {item.value}
+                </h3>
 
                 <p
                   className="
