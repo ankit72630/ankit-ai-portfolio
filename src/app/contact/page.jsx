@@ -1,12 +1,41 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
 
 const ContactPage = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSuccess(false);
+    setError(false);
+    setSending(true);
+
+    const formData = new FormData(e.target);
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY);
+    formData.append("subject", "New enquiry from Ankit.dev");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSuccess(true);
+        e.target.reset();
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
+  };
 
   const text = "Let’s Build Intelligent Products Together";
 
@@ -75,22 +104,22 @@ const ContactPage = () => {
                   max-w-2xl
                 "
               >
-                I help startups and enterprises build scalable AI-powered
-                products, enterprise dashboards, workflow automation systems,
-                and high-performance digital platforms using modern full stack
-                technologies.
+                I help startups and enterprises take AI from idea to production:
+                multi-agent systems, RAG over your own data, conversational BI,
+                and the full-stack product around them, on Google Cloud or
+                Azure.
               </p>
             </div>
 
             {/* SERVICES */}
             <div className="flex flex-wrap gap-4">
               {[
-                "Full Stack AI Engineering",
-                "Enterprise Frontend Systems",
-                "Workflow Automation",
-                "AI Dashboards",
-                "Consulting",
-                "Product Engineering",
+                "AI Agents & Multi-Agent Systems",
+                "RAG & LLM Integration",
+                "Conversational BI",
+                "Full Stack AI Products",
+                "AI Architecture Consulting",
+                "Enterprise Frontend",
               ].map((item, index) => (
                 <div
                   key={index}
@@ -143,9 +172,12 @@ const ContactPage = () => {
                   <div>
                     <p className="text-sm text-gray-500">Email</p>
 
-                    <p className="font-semibold text-black break-all">
+                    <a
+                      href="mailto:ak1603292@gmail.com"
+                      className="font-semibold text-black text-sm sm:text-base hover:underline"
+                    >
                       ak1603292@gmail.com
-                    </p>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -180,7 +212,7 @@ const ContactPage = () => {
                     <p className="text-sm text-gray-500">Location</p>
 
                     <p className="font-semibold text-black">
-                      India • Remote Worldwide
+                      India (IST) • Remote Worldwide
                     </p>
                   </div>
                 </div>
@@ -247,10 +279,13 @@ const ContactPage = () => {
                   </div>
 
                   <div>
-                    <p className="text-sm text-gray-500">Response Time</p>
+                    <p className="text-sm text-gray-500">Availability</p>
 
                     <p className="font-semibold text-black">
-                      Usually within 24 hrs
+                      Replies within 24 hrs
+                    </p>
+                    <p className="text-xs text-gray-500 mt-1">
+                      5 PM – 1 AM IST · overlaps US & EU hours
                     </p>
                   </div>
                 </div>
@@ -287,7 +322,18 @@ const ContactPage = () => {
             />
 
             {/* FORM */}
-            <form className="relative z-10 flex flex-col gap-8">
+            <form
+              onSubmit={handleSubmit}
+              className="relative z-10 flex flex-col gap-8"
+            >
+              {/* SPAM TRAP (hidden from people) */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+              />
               <div className="flex flex-col gap-4">
                 <span className="text-sm uppercase tracking-[0.3rem] text-gray-500">
                   Start A Conversation
@@ -306,6 +352,8 @@ const ContactPage = () => {
 
                 <input
                   type="text"
+                  name="name"
+                  required
                   placeholder="John Doe"
                   className="
                     bg-white/70
@@ -327,6 +375,8 @@ const ContactPage = () => {
 
                 <input
                   type="email"
+                  name="email"
+                  required
                   placeholder="john@example.com"
                   className="
                     bg-white/70
@@ -347,6 +397,7 @@ const ContactPage = () => {
                 </label>
 
                 <select
+                  name="project_type"
                   className="
                     bg-white/70
                     border border-gray-200
@@ -357,11 +408,12 @@ const ContactPage = () => {
                     transition-all
                   "
                 >
-                  <option>AI Product Development</option>
-                  <option>Enterprise Frontend</option>
-                  <option>Workflow Automation</option>
-                  <option>Consulting</option>
-                  <option>Freelance Collaboration</option>
+                  <option>AI Agents / Multi-Agent System</option>
+                  <option>RAG / LLM Integration</option>
+                  <option>Conversational BI</option>
+                  <option>Full Stack AI Product</option>
+                  <option>AI Architecture Consulting</option>
+                  <option>Other</option>
                 </select>
               </div>
 
@@ -373,6 +425,8 @@ const ContactPage = () => {
 
                 <textarea
                   rows={6}
+                  name="message"
+                  required
                   placeholder="Tell me about your project, requirements, goals, or collaboration opportunity..."
                   className="
                     bg-white/70
@@ -390,7 +444,10 @@ const ContactPage = () => {
               {/* BUTTON */}
               <button
                 type="submit"
+                disabled={sending}
                 className="
+                  disabled:opacity-60
+                  disabled:cursor-not-allowed
                   group
                   bg-black
                   text-white
@@ -405,7 +462,7 @@ const ContactPage = () => {
                   shadow-xl
                 "
               >
-                Start a Conversation
+                {sending ? "Sending..." : "Start a Conversation"}
                 <span className="text-xl group-hover:translate-x-1 transition-all">
                   →
                 </span>
@@ -423,7 +480,8 @@ const ContactPage = () => {
                     font-medium
                   "
                 >
-                  Your message has been sent successfully.
+                  Thanks! Your message has been sent. I&apos;ll reply within 24
+                  hours.
                 </div>
               )}
 
@@ -439,7 +497,8 @@ const ContactPage = () => {
                     font-medium
                   "
                 >
-                  Something went wrong. Please try again.
+                  Something went wrong. Please email me directly at
+                  ak1603292@gmail.com.
                 </div>
               )}
             </form>
