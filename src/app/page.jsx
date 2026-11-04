@@ -171,6 +171,40 @@ const Homepage = () => {
             AI Architect • Agentic AI • Full Stack
           </motion.div>
 
+          {/* TOPTAL BADGE */}
+          <a
+            href="https://www.toptal.com/developers/resume/ankit-kumar35"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="self-start hover:scale-105 transition-transform"
+          >
+            <div
+              className="w-44 h-48 bg-sky-400 p-[5px]"
+              style={{
+                clipPath:
+                  "polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)",
+              }}
+            >
+              <div
+                className="w-full h-full bg-gradient-to-b from-blue-700 to-blue-950 text-white flex flex-col items-center justify-center gap-1 text-center"
+                style={{
+                  clipPath:
+                    "polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)",
+                }}
+              >
+                <span className="text-xs">★ ★ ★</span>
+                <span className="font-extrabold text-sm leading-tight">
+                  VERIFIED EXPERT
+                </span>
+                <span className="text-[11px] opacity-80">Vetted by</span>
+                <span className="font-bold text-lg">Toptal</span>
+                <span className="mt-1 px-3 py-0.5 rounded bg-blue-500 text-xs font-semibold">
+                  Hire me
+                </span>
+              </div>
+            </div>
+          </a>
+
           {/* MAIN HEADING */}
           <div className="max-w-[720px]">
             <h1
