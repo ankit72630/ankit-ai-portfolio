@@ -20,21 +20,39 @@ const ExternalLinkIcon = () => (
   </svg>
 );
 
-const portfolioSections = [
+const sectionsInOrder = [
   {
     section: "Enterprise AI Platforms",
     description:
       "Production-grade AI systems, workflow automation platforms, and enterprise AI engineering projects.",
     projects: [
       {
-        title:
-          "BVP Activity Reporting & Portfolio Management Platform",
+        title: "Agentic AI Decision-Support Platform (Sales QBR)",
+        subtitle: "Agentic AI Architect • HCL Technologies",
+        description:
+          "Architected and built an end-to-end multi-agent platform on Gemini and Vertex AI. Synthesis, Analysis and Content agents answer sales managers' questions in plain English, generate executive QBR slides, and email them to leadership on a schedule, with human review before anything is sent.",
+        impact:
+          "Turned days of manual quarterly reporting into an on-demand, agent-driven workflow.",
+        tech: [
+          "Gemini",
+          "Vertex AI",
+          "Multi-Agent Systems",
+          "FastAPI",
+          "React.js",
+          "Cloud Run",
+          "Human-in-the-loop",
+        ],
+        image: "/work/QBR.png",
+      },
+
+      {
+        title: "BVP Activity Reporting & Portfolio Management Platform",
         subtitle:
           "Freelance Full Stack AI Engineer • Bessemer Venture Partners",
         description:
           "Built an enterprise AI-powered portfolio management and reporting platform for Bessemer Venture Partners (BVP), enabling venture teams to manage portfolio KPIs, financing rounds, activity reporting workflows, and AI-assisted insights through a unified React interface.",
         impact:
-          "$20B+ VC operations workflow automation with AI-assisted KPI extraction.",
+          "Portfolio KPIs, financing rounds and partner reporting unified in one platform, with AI-assisted KPI extraction.",
         tech: [
           "React.js",
           "Redux",
@@ -50,16 +68,15 @@ const portfolioSections = [
 
       {
         title: "AI-Powered Claims Automation Platform",
-        subtitle:
-          "Full Stack AI Engineer • HCL Technologies",
+        subtitle: "Full Stack AI Engineer • HCL Technologies",
         description:
-          "Designed and built an AI-powered claims processing system using React, FastAPI, LangChain, and OpenAI APIs to automate document parsing, fraud analysis, workflow orchestration, AI-based decisioning, and email automation.",
+          "Designed and built an AI-powered claims processing system with LangGraph agents for verification, fraud detection and escalation, using React, FastAPI and OpenAI APIs to automate document parsing, workflow orchestration, AI-based decisioning, and email automation.",
         impact:
-          "Reduced claims processing time from 4 hours to 45 minutes through intelligent automation.",
+          "Automated 60% of manual checks and cut claims processing from 4 hours to 45 minutes, with 92% precision in user acceptance testing.",
         tech: [
           "React.js",
           "FastAPI",
-          "LangChain",
+          "LangGraph",
           "OpenAI APIs",
           "PostgreSQL",
           "JWT / RBAC",
@@ -69,14 +86,14 @@ const portfolioSections = [
 
       {
         title: "Intelligent Regulatory Platform (IRP)",
-        subtitle:
-          "Frontend React Lead • HCL Technologies",
+        subtitle: "Frontend React Lead • HCL Technologies",
         description:
-          "Leading frontend engineering for a large-scale regulatory workflow platform in the Life Sciences & Healthcare domain, focused on scalable React architecture, reusable UI systems, and enterprise workflow automation.",
+          "Led frontend engineering for a large-scale regulatory workflow platform in the Life Sciences & Healthcare domain handling 500K+ document submissions a year, with scalable React architecture, reusable UI systems, and GenAI features on Azure AI Foundry.",
         impact:
           "Reusable enterprise component system adopted across multiple product modules.",
         tech: [
           "React.js",
+          "Azure AI Foundry",
           "Redux",
           "MUI",
           "Enterprise Workflows",
@@ -93,14 +110,12 @@ const portfolioSections = [
       "Large-scale enterprise dashboarding, banking systems, and high-performance frontend architectures.",
     projects: [
       {
-        title:
-          "Global Banking Platform (Standard Chartered Bank)",
-        subtitle:
-          "Technical Lead • HCL Technologies",
+        title: "Global Banking Platform (Standard Chartered Bank)",
+        subtitle: "Technical Lead • HCL Technologies",
         description:
           "Led frontend architecture for a multilingual banking platform deployed across 40+ countries, building scalable enterprise dashboards, reusable component systems, and optimized React workflows.",
         impact:
-          "40+ country deployment with significant frontend performance improvements.",
+          "Used by 3,000+ people in 40+ countries. Lighthouse score raised from 61 to 89, page load cut by 35%, and a 12-language component system that cut per-locale effort by 65%.",
         tech: [
           "React.js",
           "Redux",
@@ -113,12 +128,11 @@ const portfolioSections = [
 
       {
         title: "Investment Banking Trading Dashboard",
-        subtitle:
-          "Software Developer • Deutsche Bank",
+        subtitle: "Software Developer • Deutsche Bank",
         description:
           "Built enterprise trading dashboards handling large-scale financial data visualization and optimized rendering performance for investment banking workflows.",
         impact:
-          "Improved rendering performance and optimized trade data workflows.",
+          "Dashboards processing 10,000+ trades a day, with 40% lower render latency and 25% faster trade data loading.",
         tech: [
           "React.js",
           "Redux",
@@ -131,12 +145,11 @@ const portfolioSections = [
 
       {
         title: "British Telecom Self-Service Portal",
-        subtitle:
-          "Software Developer • British Telecom",
+        subtitle: "Software Developer • British Telecom",
         description:
           "Developed customer self-service platforms used by millions of global users with focus on accessibility, performance, responsive UI systems, and API integration.",
         impact:
-          "Enterprise-grade customer experience platform for global telecom operations.",
+          "Portal serving 2M+ customers, WCAG 2.1 AA compliant, rated 4.2/5 after launch, with Node.js APIs handling 500K+ monthly sessions under 200 ms.",
         tech: [
           "React.js",
           "Redux",
@@ -149,12 +162,11 @@ const portfolioSections = [
 
       {
         title: "Engineering Project Management Portal",
-        subtitle:
-          "Software Developer • McDermott",
+        subtitle: "Software Developer • McDermott",
         description:
           "Built enterprise engineering dashboards and workflow systems for global project management operations with focus on scalability and usability.",
         impact:
-          "Improved enterprise engineering workflow visibility and reporting.",
+          "Dashboards used across 15+ countries, with bounce rate cut by 18% on low-bandwidth networks.",
         tech: [
           "React.js",
           "Enterprise Dashboards",
@@ -167,49 +179,85 @@ const portfolioSections = [
   },
 
   {
-    section: "AI Innovation & Intelligent Automation Systems",
-     description:
-    "Advanced AI-powered workflow platforms, intelligent document processing systems, and next-generation enterprise automation concepts across healthcare, life sciences, and enterprise AI domains.",
+    section: "Live AI Products & Demos",
+    description:
+      "Multi-agent AI products I designed and built end to end. Open the live demos to try them.",
     projects: [
       {
-         title: "AI Document Intelligence Platform",
-         subtitle:
-        "Life Sciences • Healthcare • Regulatory AI",
+        title: "Vantage: AI Board Deck Intelligence (8-Agent Pipeline)",
+        subtitle: "Venture Capital • Portfolio Intelligence • Multi-Agent AI",
         description:
-        "Built an AI-powered document intelligence platform for life sciences and healthcare workflows, enabling automated extraction, proofreading, validation, and structured processing of complex scientific and regulatory documents using NLP and intelligent automation.",
-      impact:
-        "Reduced manual document review effort by 70% and improved regulatory processing accuracy across scientific workflows.",
-      tech: [
-        "React.js",
-        "FastAPI",
-        "NLP",
-        "OpenAI",
-        "OCR",
-        "Healthcare AI",
-      ],
-        image: "/work/Proofreading.png",
+          "Partners upload a startup's board deck or investor update as a PDF, and an 8-agent pipeline turns it into a decision-ready review: retrieval over past reports, extraction of 20+ financial fields (revenue, burn, cash, runway, headcount), validation, anomaly detection, six-dimension risk scoring, an approve/flag/escalate recommendation, and an executive summary.",
+        impact:
+          "Reduced manual board deck analysis effort by 80% and accelerated executive decision-making through AI-generated insights, anomaly detection, and automated scoring.",
+        tech: [
+          "Multi-Agent AI",
+          "OpenAI GPT-4o",
+          "FastAPI",
+          "React.js",
+          "Vector DB",
+          "Document AI",
+        ],
+        image: "/work/Board.png",
+        demo: "https://vantage-frontend-sepia.vercel.app",
       },
 
       {
-         title: "AI Board Deck Intelligence Platform",
-         subtitle:
-        "Venture Capital • Portfolio Intelligence • Multi-Agent AI",
-      description:
-        "Built an AI-powered board deck intelligence platform that extracts, validates, analyzes, and summarizes critical financial and operational insights from investor updates, portfolio reports, and board presentations using a multi-agent AI workflow architecture.",
-      impact:
-        "Reduced manual board deck analysis effort by 80% and accelerated executive decision-making through AI-generated insights, anomaly detection, and automated scoring.",
-      tech: [
-        "React.js",
-        "FastAPI",
-        "OpenAI",
-        "Multi-Agent AI",
-        "Document AI",
-        "Vector DB",
-      ],
-        image: "/work/Board.png",
+        title: "AskDesk: Enterprise AI Helpdesk on Google ADK",
+        subtitle: "Google ADK • Gemini • Multi-Agent Routing",
+        description:
+          "A root Router agent hands each request to a Knowledge agent (RAG over the company knowledge base), an Action agent (tickets, VPN resets) or an Escalation agent (sensitive issues to a human). Answers stream to a React UI, and a live Agent Trace panel shows which agent handled each step.",
+        impact:
+          "Transparent, auditable agent routing, built to swap in Vertex AI Search, Jira via MCP, and Agent Runtime for production.",
+        tech: [
+          "Google ADK",
+          "Gemini",
+          "FastAPI",
+          "React.js",
+          "Cloud Run",
+          "Server-Sent Events",
+        ],
+        image: "/work/AskDesk.png",
+        demo: "https://askdesk.vercel.app",
+        code: "https://github.com/ankit72630/askdesk",
+      },
+
+      {
+        title: "AutoCloser: AI Agent for Real-Estate Lead Qualification",
+        subtitle: "Real Estate • Conversational AI • Lead Scoring",
+        description:
+          "An LLM agent chats with buyer enquiries from property portals, asks about budget, location, bedrooms and timeline, and updates a live 0–100 lead score broken down by budget, timeline, intent and engagement. It suggests matching listings, offers inspection slots, and lets a human agent take over at any time.",
+        impact:
+          "Explainable hot / warm / cool lead scoring, so agents see exactly why a buyer is ready to book.",
+        tech: [
+          "OpenAI API",
+          "LLM Agents",
+          "FastAPI",
+          "React.js",
+          "TanStack Query",
+        ],
+        image: "/work/AutoCloser.png",
+      },
+
+      {
+        title: "AI Document Intelligence Platform",
+        subtitle: "Life Sciences • Healthcare • Regulatory AI",
+        description:
+          "Built an AI-powered document intelligence platform for life sciences and healthcare workflows, enabling automated extraction, proofreading, validation, and structured processing of complex scientific and regulatory documents using NLP and intelligent automation.",
+        impact:
+          "Reduced manual document review effort by 70% and improved regulatory processing accuracy across scientific workflows.",
+        tech: ["React.js", "FastAPI", "NLP", "OpenAI", "OCR", "Healthcare AI"],
+        image: "/work/Proofreading.png",
       },
     ],
   },
+];
+
+// Show live products first, then enterprise work
+const portfolioSections = [
+  sectionsInOrder[2],
+  sectionsInOrder[0],
+  sectionsInOrder[1],
 ];
 
 const PortfolioPage = () => {
@@ -225,7 +273,7 @@ const PortfolioPage = () => {
           {/* HERO */}
           <div className="text-center flex flex-col gap-6">
             <span className="uppercase tracking-[0.3rem] text-sm text-gray-500">
-              Enterprise AI Engineering • Full Stack Development
+              AI Architect • Agentic AI • Full Stack
             </span>
 
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
@@ -233,24 +281,19 @@ const PortfolioPage = () => {
             </h1>
 
             <p className="max-w-4xl mx-auto text-gray-700 text-lg leading-8">
-              A curated portfolio of enterprise AI platforms, banking systems,
-              workflow automation products, scalable dashboard architectures,
-              and intelligent digital experiences built across Banking,
-              Venture Capital, Telecom, Engineering, and Healthcare domains.
+              Live multi-agent AI products you can try, plus enterprise AI
+              platforms and large-scale systems I&apos;ve delivered across
+              Banking, Venture Capital, Insurance, Telecom, Engineering, and
+              Healthcare.
             </p>
           </div>
 
           {/* PORTFOLIO SECTIONS */}
           {portfolioSections.map((section, sectionIndex) => (
-            <section
-              key={section.section}
-              className="flex flex-col gap-12"
-            >
+            <section key={section.section} className="flex flex-col gap-12">
               {/* SECTION HEADER */}
               <div className="flex flex-col gap-4">
-                <h2 className="text-4xl font-bold">
-                  {section.section}
-                </h2>
+                <h2 className="text-4xl font-bold">{section.section}</h2>
 
                 <p className="text-lg text-gray-600 max-w-3xl">
                   {section.description}
@@ -272,11 +315,20 @@ const PortfolioPage = () => {
                   >
                     {/* IMAGE */}
                     <div className="relative w-full h-72 bg-gradient-to-br from-[#f7f7f7] to-white overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-contain p-4"
-                      />
+                      {project.image ? (
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          loading="lazy"
+                          className="w-full h-full object-contain p-4"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-700 p-8 text-center">
+                          <span className="text-white text-2xl font-bold">
+                            {project.title.split(":")[0]}
+                          </span>
+                        </div>
+                      )}
                     </div>
 
                     {/* CONTENT */}
@@ -303,9 +355,7 @@ const PortfolioPage = () => {
                           Business Impact
                         </p>
 
-                        <p className="leading-7">
-                          {project.impact}
-                        </p>
+                        <p className="leading-7">{project.impact}</p>
                       </div>
 
                       {/* TECH STACK */}
@@ -320,11 +370,33 @@ const PortfolioPage = () => {
                         ))}
                       </div>
 
-                      {/* CTA */}
-                      <div className="pt-3 inline-flex items-center gap-2 text-sm font-medium underline cursor-pointer">
-                        View Case Study
-                        <ExternalLinkIcon />
-                      </div>
+                      {/* LINKS (shown only when a real link exists) */}
+                      {(project.demo || project.code) && (
+                        <div className="pt-3 flex flex-wrap gap-5">
+                          {project.demo && (
+                            <a
+                              href={project.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-sm font-semibold underline"
+                            >
+                              Live Demo
+                              <ExternalLinkIcon />
+                            </a>
+                          )}
+                          {project.code && (
+                            <a
+                              href={project.code}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-sm font-semibold underline"
+                            >
+                              Source Code
+                              <ExternalLinkIcon />
+                            </a>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </motion.div>
                 ))}
@@ -339,9 +411,9 @@ const PortfolioPage = () => {
             </h3>
 
             <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-8">
-              Open to freelance, contract, consulting, and full-time
-              opportunities focused on Full Stack AI Engineering,
-              Enterprise Frontend Systems, and AI Workflow Automation.
+              Open to freelance, contract and consulting work on AI agents,
+              multi-agent systems, RAG, conversational BI, and full-stack AI
+              products.
             </p>
 
             <div className="flex flex-wrap gap-5 justify-center pt-4">
@@ -353,7 +425,7 @@ const PortfolioPage = () => {
               </a>
 
               <a
-                href="/Ankit_Kumar_Freelance_Resume.pdf"
+                href="/Ankit_Kumar_AIArchitect_Resume.pdf"
                 target="_blank"
                 className="px-8 py-4 border border-white rounded-2xl font-semibold hover:bg-white hover:text-black transition-all"
               >

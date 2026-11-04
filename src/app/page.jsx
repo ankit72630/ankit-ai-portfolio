@@ -397,7 +397,7 @@ const Homepage = () => {
             </Link>
 
             <a
-              href="/Ankit_Kumar_Freelance_Resume.pdf"
+              href="/Ankit_Kumar_AIArchitect_Resume.pdf"
               download
               className="
                 w-full sm:w-auto

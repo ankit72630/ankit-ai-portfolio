@@ -162,7 +162,7 @@ const AboutPage = () => {
             {/* CTA */}
             <div className="flex flex-wrap gap-4">
               <a
-                href="/Ankit_Kumar_Freelance_Resume.pdf"
+                href="/Ankit_Kumar_AIArchitect_Resume.pdf"
                 target="_blank"
                 className="px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition-all"
               >
